@@ -45,7 +45,7 @@ jobs:
         run: git submodule update --init --recursive
       
       - name: get necessary dependencies
-        uses: brew install make ldid
+        run: brew install make ldid
 
       - name: Get gl4es latest commit hash
         id: gl4es-sha
