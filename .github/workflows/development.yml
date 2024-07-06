@@ -25,7 +25,7 @@ jobs:
           - platform: 8
             platform_name: tvossimulator
     
-    runs-on: MacStadium
+    runs-on: macos-latest
     steps:
       - name: Remove work folders
         env:
@@ -43,6 +43,9 @@ jobs:
 
       - name: Checkout repository submodules
         run: git submodule update --init --recursive
+      
+      - name: get necessary dependencies
+        uses: brew install make ldid
 
       - name: Get gl4es latest commit hash
         id: gl4es-sha
